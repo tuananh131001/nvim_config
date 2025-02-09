@@ -1,5 +1,5 @@
 return {
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
-  { "neo-tree.nvim", enabled = false },
+  -- { "folke/trouble.nvim", enabled = false },
+  -- { "neo-tree.nvim", enabled = false },
 }

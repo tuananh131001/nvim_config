@@ -1,2 +1,1 @@
-local opt = vim.opt
 
