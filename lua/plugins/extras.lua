@@ -123,7 +123,7 @@ return {
 	},
 	{
 		"MeanderingProgrammer/markdown.nvim",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		main = "render-markdown",
 		opts = {},
 		name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
@@ -209,6 +209,29 @@ return {
 						},
 					},
 				},
+			})
+		end,
+	},
+	{
+		"leath-dub/snipe.nvim",
+		keys = {
+			{
+				"<leader>h",
+				function()
+					require("snipe").open_buffer_menu()
+				end,
+				desc = "Open Snipe buffer menu",
+			},
+		},
+		opts = {},
+	},
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
 			})
 		end,
 	},
