@@ -97,7 +97,7 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",
-			"ibhagwan/fzf-lua", -- optional
+			"echasnovski/mini.pick",
 		},
     -- stylua: ignore
     keys = {
