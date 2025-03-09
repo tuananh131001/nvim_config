@@ -20,6 +20,7 @@ return {
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		event = "VeryLazy",
 		opts = {
 			settings = {
 				code_lens = "off", -- all
