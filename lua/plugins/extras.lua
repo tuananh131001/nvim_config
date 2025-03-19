@@ -93,6 +93,7 @@ return {
 	},
 	{
 		"NeogitOrg/neogit",
+		-- dir = "/Users/anh.nt/Documents/coding/personal/neogit",
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -234,5 +235,17 @@ return {
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
+	},
+	{
+		"otavioschwanck/arrow.nvim",
+		cmd = "Arrow",
+		keys = {
+			{ ";", "Arrow open", desc = "Open mark buffer" },
+		},
+		opts = {
+			show_icons = true,
+			leader_key = ";",
+			buffer_leader_key = "m",
+		},
 	},
 }
