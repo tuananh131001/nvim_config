@@ -2,7 +2,7 @@ return {
 'saghen/blink.cmp',
   lazy = false, -- lazy loading handled internally
   -- optional: provides snippets for the snippet source
-dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+dependencies = {"fang2hou/blink-copilot" , 'L3MON4D3/LuaSnip', version = 'v2.*' },
 
   -- use a release tag to download pre-built binaries
   version = '1.*',
@@ -19,7 +19,10 @@ dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- see the "default configuration" section below for full documentation on how to define
     -- your own keymap.
-    keymap = { preset = 'super-tab' },
+keymap = {
+      preset = "enter",
+      ["<C-y>"] = { "select_and_accept" },
+    },
     -- completion = {
     --   menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end }
     -- },
@@ -66,7 +69,19 @@ dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
       end,
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'copilot', 'lsp', 'path', 'snippets', 'buffer' },
+providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+						opts = {
+							max_completions = 3,
+							max_attempts = 4,
+						},
+					},
+				},
     },
 
     -- experimental signature help support
