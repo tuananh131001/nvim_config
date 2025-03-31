@@ -21,8 +21,8 @@ return({
 		config = function()
 			require("mini.tabline").setup({})
 		end,
-	},
-	{
+  },
+  {
 		"echasnovski/mini.ai",
 		version = "*",
 		config = function()
