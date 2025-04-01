@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	lazy = false, -- lazy loading handled internally
 	-- optional: provides snippets for the snippet source
-	dependencies = { "fang2hou/blink-copilot", { "rafamadriz/friendly-snippets" }, version = "v2.*" },
+	dependencies = { "rafamadriz/friendly-snippets" },
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -38,19 +38,8 @@ return {
 		},
 
 		sources = {
-			default = { "copilot", "lsp", "path", "snippets", "buffer" },
-			providers = {
-				copilot = {
-					name = "copilot",
-					module = "blink-copilot",
-					score_offset = 100,
-					async = true,
-					opts = {
-						max_completions = 3,
-						max_attempts = 4,
-					},
-				},
-			},
+			default = { "lsp", "path", "snippets", "buffer" },
+			providers = {},
 		},
 
 		-- experimental signature help support

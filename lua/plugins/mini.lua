@@ -1,4 +1,4 @@
-return({
+return {
 	{
 		"echasnovski/mini.statusline",
 		version = "*",
@@ -21,12 +21,21 @@ return({
 		config = function()
 			require("mini.tabline").setup({})
 		end,
-  },
-  {
+	},
+	{
 		"echasnovski/mini.ai",
 		version = "*",
 		config = function()
 			require("mini.ai").setup({})
 		end,
 	},
-})
+	{
+		{
+			"echasnovski/mini.pick",
+			version = "*",
+			config = function()
+				require("mini.pick").setup({})
+			end,
+		},
+	},
+}
