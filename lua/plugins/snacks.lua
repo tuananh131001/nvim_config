@@ -19,6 +19,7 @@ return {
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
+      input = { enabled = true }
 		},
     -- stylua: ignore
     keys = {
