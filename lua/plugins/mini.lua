@@ -32,9 +32,9 @@ return {
 	{
 		{
 			"echasnovski/mini.pick",
-			version = "*",
+			version = false,
 			config = function()
-				require("mini.pick").setup({})
+				require("mini.pick").setup({ search = { enabled = true }})
 			end,
 		},
 	},
