@@ -39,9 +39,13 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 -- Set up folding for treesitter
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.foldcolumn = "0"
+vim.opt.fillchars:append({fold = " "})
 
 -- Setup lazy.nvim
 require("lazy").setup({

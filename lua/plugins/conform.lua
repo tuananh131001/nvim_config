@@ -18,6 +18,7 @@ return {
 					lua = { "stylua" },
           javascript = { "eslint_d" },
           typescript = { "eslint_d" },
+          ruby = { "rubocop" },
 				},
 			})
 		end,

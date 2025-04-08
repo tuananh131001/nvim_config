@@ -1,41 +1,14 @@
 return {
-	{
-		"echasnovski/mini.statusline",
-		version = "*",
-
-		config = function()
+  {
+    "echasnovski/mini.nvim",
+    version = "*",
+    config = function()
 			require("mini.statusline").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.pairs",
-		version = "*",
-
-		config = function()
 			require("mini.pairs").setup()
-		end,
-	},
-	{
-		"echasnovski/mini.tabline",
-		version = "*",
-		config = function()
-			require("mini.tabline").setup({})
-		end,
-	},
-	{
-		"echasnovski/mini.ai",
-		version = "*",
-		config = function()
-			require("mini.ai").setup({})
-		end,
-	},
-	{
-		{
-			"echasnovski/mini.pick",
-			version = false,
-			config = function()
-				require("mini.pick").setup({ search = { enabled = true }})
-			end,
-		},
-	},
+      require("mini.tabline").setup()
+      require("mini.ai").setup()
+      require("mini.pick").setup({ search = { enabled = true } })
+      require("mini.splitjoin").setup()
+    end,
+  }
 }

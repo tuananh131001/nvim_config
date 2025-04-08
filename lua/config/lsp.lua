@@ -14,8 +14,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 		vim.keymap.set("n", "gc", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
 		vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-      vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+		vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 	end,
+})
+
+vim.api.nvim_create_autocmd({ "LspDetach" }, {
+  group = vim.api.nvim_create_augroup("LspStopWithLastClient", {}),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client or not client.attached_buffers then return end
+    for buf_id in pairs(client.attached_buffers) do
+      if buf_id ~= args.buf then return end
+    end
+    client:stop()
+  end,
+  desc = "Stop lsp client when no buffer is attached",
 })
 
 -- This is copied straight from blink
@@ -25,7 +38,7 @@ local capabilities = {
 		foldingRange = {
 			dynamicRegistration = false,
 			lineFoldingOnly = true,
-        },
+		},
 	},
 }
 
@@ -39,4 +52,4 @@ vim.lsp.config("*", {
 })
 
 -- Enable each language server by filename under the lsp/ folder
-vim.lsp.enable({ "luals", "vtsls" })
+vim.lsp.enable({ "luals", "vtsls", "solargraph", "rubocop" })
