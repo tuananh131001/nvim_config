@@ -73,6 +73,7 @@ return {
 					opts = {
 						-- options for blink-cmp-avante
 					},
+        },
 				copilot = {
 					name = "copilot",
 					module = "blink-copilot",
