@@ -2,8 +2,7 @@ return {
 	"saghen/blink.cmp",
 	lazy = false, -- lazy loading handled internally
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets", "Kaiser-Yang/blink-cmp-avante", { "fang2hou/blink-copilot" } },
-
+	dependencies = { "Kaiser-Yang/blink-cmp-avante" ,"echasnovski/mini.icons", "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
 
 	-- use a release tag to download pre-built binaries
 	version = "1.*",
@@ -19,6 +18,27 @@ return {
 			menu = {
 				draw = {
 					treesitter = { "lsp" },
+					components = {
+						kind_icon = {
+							text = function(ctx)
+								---@type string, string, boolean
+								local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+								return kind_icon
+							end,
+							highlight = function(ctx)
+								---@type string, string, boolean
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
+						kind = {
+							highlight = function(ctx)
+								---@type string, string, boolean
+								local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+								return hl
+							end,
+						},
+					},
 					columns = {
 						{ "label", "label_description", gap = 1 },
 						{ "kind_icon", "kind" },
@@ -40,8 +60,7 @@ return {
 
 		sources = {
 			default = {
-        "copilot",
-				"avante",
+				"copilot",
 				"lsp",
 				"path",
 				"snippets",
@@ -54,14 +73,12 @@ return {
 					opts = {
 						-- options for blink-cmp-avante
 					},
+				copilot = {
+					name = "copilot",
+					module = "blink-copilot",
+					score_offset = 100,
+					async = true,
 				},
-
-        copilot = {
-          name = "copilot",
-          module = "blink-copilot",
-          score_offset = 100,
-          async = true,
-        },
 			},
 		},
 

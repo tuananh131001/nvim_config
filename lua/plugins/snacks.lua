@@ -32,7 +32,7 @@ return {
 			},
 			explorer = { enabled = false },
 			indent = { enabled = true },
-			picker = { enabled = true },
+			picker = { enabled = false },
       notify = { enabled = true },
 			notifier = { enabled = true },
 			quickfile = { enabled = true },

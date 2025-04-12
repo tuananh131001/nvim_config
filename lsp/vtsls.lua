@@ -14,20 +14,18 @@ local action_table = setmetatable({}, {
 	end,
 })
 
-local M = {}
-
-function M.map(str)
-	---@param mode string|string[] Mode "short-name" (see |nvim_set_keymap()|), or a list thereof.
-	---@param lhs string           Left-hand side |{lhs}| of the mapping.
-	---@param rhs string|function  Right-hand side |{rhs}| of the mapping, can be a Lua function.
-	---@param opts? vim.keymap.set.Opts
-	return function(mode, lhs, rhs, opts)
-		opts = opts or {}
-		opts.desc = ("%s: %s"):format(str, (opts.desc or ""))
-
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
-end
+local inlay_hints = {
+	enumMemberValues = { enabled = true },
+	functionLikeReturnTypes = { enabled = true },
+	parameterNames = { enabled = "literals" },
+	parameterTypes = { enabled = true },
+	propertyDeclarationTypes = { enabled = true },
+	variableTypes = { enabled = false },
+}
+local settings = {
+	suggest = { completeFunctionCalls = true },
+	inlayHints = inlay_hints,
+}
 
 ---@type vim.lsp.Config
 return {
@@ -41,9 +39,21 @@ return {
 		"typescriptreact",
 		"typescript.tsx",
 	},
+	settings = {
+		complete_function_calls = true,
+		vtsls = {
+			enableMoveToFileCodeAction = true,
+			experimental = {
+				maxInlayHintLength = 30,
+				completion = { enableServerSideFuzzyMatch = true },
+			},
+		},
+		typescript = settings,
+		javascript = settings,
+	},
 	single_file_support = true,
 	on_attach = function(_client, bufnr)
-		local map = M.map("Vtsls")
+		local map = require("user.keymap.util").map("Vtsls")
 
 		map(
 			{ "n" },
