@@ -8,7 +8,12 @@ return {
       require("mini.tabline").setup()
       require("mini.ai").setup()
       require("mini.pick").setup({ search = { enabled = true } })
-      require("mini.splitjoin").setup()
+      require("mini.bracketed").setup()
+      require("mini.splitjoin").setup({
+        mappings = {
+          join = '<leader>sj',
+        }
+      })
     end,
   }
 }
