@@ -53,4 +53,4 @@ vim.lsp.config("*", {
 })
 
 -- Enable each language server by filename under the lsp/ folder
-vim.lsp.enable({ "luals", "vtsls", "solargraph", "rubocop" })
+vim.lsp.enable({ "luals", "vtsls", "solargraph", "rubocop", "htmx" })
