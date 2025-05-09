@@ -1,7 +1,6 @@
 return {
 	"saghen/blink.cmp",
 	lazy = false, -- lazy loading handled internally
-	-- optional: provides snippets for the snippet source
 	dependencies = {
 		"Kaiser-Yang/blink-cmp-avante",
 		"echasnovski/mini.icons",
@@ -10,7 +9,7 @@ return {
 	},
 
 	-- use a release tag to download pre-built binaries
-	version = "1.*",
+	version = "*",
 
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
@@ -22,7 +21,7 @@ return {
 		completion = {
 			menu = {
 				draw = {
-					treesitter = { "lsp" },
+					treesitter = { "lsp", "copilot", "inline" },
 					components = {
 						kind_icon = {
 							text = function(ctx)
