@@ -1,3 +1,6 @@
+-- This is copied straight from blink
+-- https://cmp.saghen.dev/installation#merging-lsp-capabilities
+
 -- This is where you enable features that only work
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -19,38 +22,42 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.api.nvim_create_autocmd({ "LspDetach" }, {
-  group = vim.api.nvim_create_augroup("LspStopWithLastClient", {}),
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    
-    if not client or not client.attached_buffers then return end
-    for buf_id in pairs(client.attached_buffers) do
-      if buf_id ~= args.buf then return end
-    end
-    client:stop()
-  end,
-  desc = "Stop lsp client when no buffer is attached",
+	group = vim.api.nvim_create_augroup("LspStopWithLastClient", {}),
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+		if not client or not client.attached_buffers then
+			return
+		end
+		for buf_id in pairs(client.attached_buffers) do
+			if buf_id ~= args.buf then
+				return
+			end
+		end
+		client:stop()
+	end,
+	desc = "Stop lsp client when no buffer is attached",
 })
 
--- This is copied straight from blink
--- https://cmp.saghen.dev/installation#merging-lsp-capabilities
-local capabilities = {
-	textDocument = {
-		foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
+local function setup_lsp()
+	local capabilities = {
+		textDocument = {
+			foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			},
 		},
-	},
-}
+	}
 
-capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+	capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
--- Setup language servers.
+	vim.lsp.config("*", {
+		capabilities = capabilities,
+		root_markers = { ".git" },
+	})
 
-vim.lsp.config("*", {
-	capabilities = capabilities,
-	root_markers = { ".git" },
-})
+	-- Enable each language server by filename under the lsp/ folder
+	vim.lsp.enable({ "gopls", "luals", "vtsls", "solargraph", "rubocop", "htmx", "copilot" })
+end
 
--- Enable each language server by filename under the lsp/ folder
-vim.lsp.enable({ "luals", "vtsls", "solargraph", "rubocop", "htmx" })
+setup_lsp()
