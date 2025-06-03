@@ -32,7 +32,10 @@ return {
 			},
 			explorer = { enabled = false },
 			indent = { enabled = true },
-			picker = { enabled = false },
+			picker = { enabled = true, 			exclude = { -- add folder names here to exclude
+				".git",
+				"node_modules",
+			}, },
       notify = { enabled = true },
 			notifier = { enabled = true },
 			quickfile = { enabled = true },
