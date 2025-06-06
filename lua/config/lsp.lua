@@ -57,7 +57,7 @@ local function setup_lsp()
 	})
 
 	-- Enable each language server by filename under the lsp/ folder
-	vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "htmx", "copilot" })
+	vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "copilot" })
 end
 
 setup_lsp()

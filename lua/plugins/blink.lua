@@ -64,6 +64,7 @@ return {
 
 		sources = {
 			default = {
+        'avante',
         "lazydev",
 				"copilot",
 				"lsp",

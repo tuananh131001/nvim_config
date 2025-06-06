@@ -5,6 +5,7 @@ return {
 		version = false, -- Never set this value to "*"! Never!
 		build = "make",
 		opts = {
+      provider = "gemini",
 			providers = {
 				gemini = {
 					endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
