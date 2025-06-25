@@ -52,7 +52,7 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {},
 		config = function()
-			vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop" })
+			vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "pyright" })
 
 			local keymap = vim.keymap -- for conciseness
 			vim.lsp.config("vtsls", {
@@ -74,7 +74,7 @@ return {
 
 					map(
 						{ "n" },
-						"<leader>co",
+						"<leader>cO",
 						action_table["source.organizeImports"],
 						{ buffer = bufnr, desc = "[O]rganize Imports" }
 					)

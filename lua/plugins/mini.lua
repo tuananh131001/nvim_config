@@ -4,6 +4,7 @@ return {
     version = "*",
     config = function()
 			require("mini.statusline").setup()
+      require("mini.diff").setup()
 			require("mini.pairs").setup()
       require("mini.tabline").setup()
       require("mini.ai").setup()
