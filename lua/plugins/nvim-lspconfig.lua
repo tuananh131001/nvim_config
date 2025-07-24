@@ -52,7 +52,7 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {},
 		config = function()
-			vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "pyright" })
+			vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "pyright", "phpactor", "intelephense" })
 
 			local keymap = vim.keymap -- for conciseness
 			vim.lsp.config("vtsls", {
