@@ -42,7 +42,18 @@ return {
 	-- },
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {},
+		opts = {
+			ensure_installed = {
+				"vue_ls",
+				"gopls",
+				"vtsls",
+				"solargraph",
+				"rubocop",
+				"pyright",
+				"phpactor",
+				"intelephense",
+			},
+		},
 		dependencies = {
 			"neovim/nvim-lspconfig",
 		},
@@ -52,8 +63,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {},
 		config = function()
-			vim.lsp.enable({ "vue_ls", "gopls", "luals", "vtsls", "solargraph", "rubocop", "pyright", "phpactor", "intelephense" })
-
 			local keymap = vim.keymap -- for conciseness
 			vim.lsp.config("vtsls", {
 				settings = {
