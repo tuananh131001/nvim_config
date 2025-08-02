@@ -21,8 +21,6 @@ return {
 					typescript = { "prettierd", "prettier" },
 					typescriptreact = { "prettierd", "prettier" },
 					ruby = { "rubocop" },
-					php = { "php_cs_fixer" },
-          blade = { "blade-formatter" },
 				},
 			})
 		end,
