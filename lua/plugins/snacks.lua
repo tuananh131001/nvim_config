@@ -47,6 +47,7 @@ return {
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
 			input = { enabled = true },
+      image = { enabled = true },
 		},
     -- stylua: ignore
     keys = {
