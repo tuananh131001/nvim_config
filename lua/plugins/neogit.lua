@@ -1,7 +1,7 @@
 return {
 	{
-		"NeogitOrg/neogit",
-		-- dir = "/Users/anh.nt/Documents/coding/personal/neogit",
+		-- "NeogitOrg/neogit",
+		dir = "/Users/anh.nt/Documents/coding/personal/neogit",
 		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
