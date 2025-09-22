@@ -2,11 +2,10 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 1000,
+    priority = 1000,
 		config = function()
 			require("catppuccin").setup({
 				integrations = {
-					cmp = true,
 					mason = true,
 					diffview = true,
 					aerial = true,

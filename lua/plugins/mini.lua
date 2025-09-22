@@ -22,7 +22,7 @@ return {
 					scroll_up = "<C-u>",
 					scroll_left = "<C-h>",
 					scroll_right = "<C-l>",
-          paste = "<C-r>",
+					paste = "<C-r>",
 				},
 				window = {
 					config = function()
@@ -44,7 +44,12 @@ return {
 					join = "<leader>sj",
 				},
 			})
-
+			require("mini.surround").setup()
+      -- LSP -- Completion and Snippets
+      vim.cmd([[au FileType snacks_picker_input lua vim.b.minicompletion_disable = true]]) -- fix snacks issue
+			require("mini.icons").setup()
+			require("mini.snippets").setup()
+			require("mini.completion").setup()
 		end,
 	},
 }
