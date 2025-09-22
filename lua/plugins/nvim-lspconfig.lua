@@ -50,7 +50,6 @@ return {
 				"solargraph",
 				"rubocop",
 				"pyright",
-				"phpactor",
 				"intelephense",
 			},
 		},
@@ -64,6 +63,7 @@ return {
 		dependencies = {},
 		config = function()
 			local keymap = vim.keymap -- for conciseness
+      vim.lsp.set_log_level("error")
 			vim.lsp.config("vtsls", {
 				settings = {
 					complete_function_calls = true,
@@ -107,6 +107,9 @@ return {
 					)
 				end,
 			})
+      vim.lsp.config("intelephense", {
+        filetypes = { "php", "inc" },
+      })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),

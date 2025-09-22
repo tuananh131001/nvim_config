@@ -6,7 +6,7 @@ return {
 			enable_builtin = true,
 			default_to_projects_v2 = true,
 			default_merge_method = "squash",
-			picker = "mini",
+			picker = "snacks",
 		},
 		keys = {
 			{ "<leader>opc", "<cmd>Octo pr create draft<CR>", desc = "Create pr in draft(Octo)" },

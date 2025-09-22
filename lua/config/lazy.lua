@@ -46,6 +46,8 @@ vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
 vim.opt.fillchars:append({fold = " "})
+-- #https://www.reddit.com/r/neovim/comments/1ilejy4/minipicker_struggling_to_make_caseinsensitive/ 
+vim.o.ignorecase = true
 
 -- Setup lazy.nvim
 require("lazy").setup({
