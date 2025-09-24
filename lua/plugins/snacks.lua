@@ -31,9 +31,9 @@ return {
 				},
 			},
 			explorer = { enabled = false },
-			indent = { enabled = true },
+			indent = { enabled = false },
 			picker = {
-				enabled = false,
+				enabled = true,
 				exclude = { -- add folder names here to exclude
 					".git",
 					"node_modules",

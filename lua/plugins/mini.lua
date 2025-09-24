@@ -96,6 +96,9 @@ return {
 					miniclue.gen_clues.z(),
 				},
 			})
+			require("mini.align").setup()
+
+      require("mini.indentscope").setup()
 		end,
 	},
 }
