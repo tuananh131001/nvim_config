@@ -30,8 +30,6 @@ return {
 					{ section = "startup" },
 				},
 			},
-			explorer = { enabled = false },
-			indent = { enabled = false },
 			picker = {
 				enabled = true,
 				exclude = { -- add folder names here to exclude
