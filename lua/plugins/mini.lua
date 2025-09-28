@@ -100,9 +100,6 @@ return {
 
       require("mini.indentscope").setup()
       require("mini.operators").setup()
-
-      -- Navigation
-      -- require("mini.jump").setup()
 		end,
 	},
 }

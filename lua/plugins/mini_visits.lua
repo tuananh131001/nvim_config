@@ -1,0 +1,85 @@
+return {
+	-- {
+	-- 	"echasnovski/mini.visits",
+	-- 	event = "VeryLazy",
+	-- 	config = function(_, opts)
+	-- 		require("mini.visits").setup(opts)
+	-- 	end,
+	-- 	opts = {},
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>va",
+	-- 			function()
+	-- 				require("mini.visits").add_label()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| label |=> add",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vr",
+	-- 			function()
+	-- 				require("mini.visits").remove_label()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| label |=> remove",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vs",
+	-- 			function()
+	-- 				require("mini.visits").select_label()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| label |=> select",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vl",
+	-- 			function()
+	-- 				require("mini.visits").list_labels()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| label |=> list",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vA",
+	-- 		function()
+	-- 				require("mini.visits").add_path()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| path |=> add",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vR",
+	-- 			function()
+	-- 				require("mini.visits").remove_path()
+	-- 				require("mini.visits").write_index()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| path |=> remove",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vS",
+	-- 			function()
+	-- 				require("mini.visits").select_path()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| path |=> select",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vL",
+	-- 			function()
+	-- 				require("mini.visits").list_paths()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| path |=> list",
+	-- 		},
+	-- 		{
+	-- 			"<leader>vr",
+	-- 			function()
+	-- 				require("mini.visits").register_visit()
+	-- 			end,
+	-- 			mode = "n",
+	-- 			desc = "hist:| path |=> register",
+	-- 		},
+	-- 	},
+	-- },
+}
