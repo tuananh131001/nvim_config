@@ -51,7 +51,8 @@ return {
 				"rubocop",
 				"pyright",
 				"intelephense",
-        "zls"
+        "zls",
+        "copilot"
 			},
 		},
 		dependencies = {
