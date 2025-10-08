@@ -45,9 +45,10 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
-vim.opt.fillchars:append({fold = " "})
--- #https://www.reddit.com/r/neovim/comments/1ilejy4/minipicker_struggling_to_make_caseinsensitive/ 
+vim.opt.fillchars:append({ fold = " " })
+-- #https://www.reddit.com/r/neovim/comments/1ilejy4/minipicker_struggling_to_make_caseinsensitive/
 vim.o.ignorecase = true
+
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -57,7 +58,7 @@ require("lazy").setup({
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "catppuccin-mocha" } },
+	install = { colorscheme = { "tokyonight" } },
 	-- automatically check for plugin updates
 	checker = { enabled = false },
 	update = { notify = false },
