@@ -44,7 +44,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
-        "copilot"
+				"copilot",
 			},
 		},
 		dependencies = {
@@ -55,9 +55,12 @@ return {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {},
+		opts = {
+			inlay_hints = { enabled = true },
+		},
 		config = function()
 			local keymap = vim.keymap -- for conciseness
-      vim.lsp.set_log_level("error")
+			vim.lsp.set_log_level("error")
 			vim.lsp.config("vtsls", {
 				settings = {
 					complete_function_calls = true,
@@ -101,9 +104,9 @@ return {
 					)
 				end,
 			})
-      vim.lsp.config("intelephense", {
-        filetypes = { "php", "inc" },
-      })
+			vim.lsp.config("intelephense", {
+				filetypes = { "php", "inc" },
+			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -135,6 +138,10 @@ return {
 
 					opts.desc = "Restart LSP"
 					keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+					vim.keymap.set("n", "<leader>ih", function()
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}), {})
+					end, { desc = "Toggle Inlay Hints" })
 				end,
 			})
 		end,
