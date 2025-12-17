@@ -53,7 +53,7 @@ return {
       { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },
       { "<leader>fR", function() Snacks.picker.recent({ filter = { cwd = true }}) end, desc = "Recent (cwd)" },
       -- Grep
-      { "<leader>sg", function() Snacks.picker.grep() end, desc = "Grep" },
+      { "<leader>sg", function() Snacks.picker.grep({ regex = false }) end, desc = "Grep" },
        -- LSP
       { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
