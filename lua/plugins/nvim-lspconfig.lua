@@ -28,18 +28,18 @@ local settings = {
 }
 
 return {
-	-- {
-	-- 	"hinell/lsp-timeout.nvim",
-	-- 	dependencies = { "neovim/nvim-lspconfig" },
-	-- 	init = function()
-	-- 		vim.g.lspTimeoutConfig = {
-	-- 			-- see config below
-	-- 			stopTimeout = 1000 * 60 * 5, -- 1 minute
-	-- 			startTimeout = 1000 * 10,
-	-- 			silent = true,
-	-- 		}
-	-- 	end,
-	-- },
+	{
+		"hinell/lsp-timeout.nvim",
+		dependencies = { "neovim/nvim-lspconfig" },
+		init = function()
+			vim.g.lspTimeoutConfig = {
+				-- see config below
+				stopTimeout = 1000 * 60 * 15, -- 15 minute - timer start when users lost Focus on IDE
+				startTimeout = 1000 * 10, -- start 10 seconds timer after return backto IDE 
+				silent = false,
+			}
+		end,
+	},
 	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
