@@ -34,8 +34,8 @@ return {
 		init = function()
 			vim.g.lspTimeoutConfig = {
 				-- see config below
-				stopTimeout = 1000 * 60 * 15, -- 15 minute - timer start when users lost Focus on IDE
-				startTimeout = 1000 * 10, -- start 10 seconds timer after return backto IDE 
+				stopTimeout = 1000 * 60 * 30, -- 30 minute - timer start when users lost Focus on IDE
+				startTimeout = 1000 * 60, -- start 100 seconds timer after return backto IDE
 				silent = false,
 			}
 		end,
@@ -45,6 +45,7 @@ return {
 		opts = {
 			ensure_installed = {
 				"copilot",
+        "tailwindcss"
 			},
 		},
 		dependencies = {
@@ -106,6 +107,17 @@ return {
 			})
 			vim.lsp.config("intelephense", {
 				filetypes = { "php", "inc" },
+			})
+			vim.lsp.config("tailwindcss", {
+				filetypes = {
+					"html",
+					"css",
+					"scss",
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+				},
 			})
 
 			vim.api.nvim_create_autocmd("LspAttach", {

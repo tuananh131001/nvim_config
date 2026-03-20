@@ -10,7 +10,7 @@ return {
 				auto_install = true,
 				indent = { enable = true },
 				highlight = { enable = true, additional_vim_regex_highlighting = false },
-				ensure_installed = { "php" },
+				ensure_installed = { "php", "tsx", "typescript", "javascript", "html", "css" },
 			})
 
 			vim.treesitter.language.register("markdown", "octo")
