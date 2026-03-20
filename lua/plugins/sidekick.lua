@@ -1,32 +1,32 @@
 return {
 	{
 		"folke/sidekick.nvim",
-    lazy = false,
+		lazy = false,
 		opts = {
-      nes = { enabled = false }
+			nes = { enabled = false },
 			-- add any options here
-			-- cli = {
-			-- 	mux = {
-			-- 		backend = "tmux",
-			-- 		enabled = true,
-			-- 	},
-			-- },
+			cli = {
+				mux = {
+					backend = "tmux",
+					enabled = true,
+				},
+			},
 		},
 		keys = {
+			-- {
+			-- 	"<tab>",
+			-- 	function()
+			-- 		-- if there is a next edit, jump to it, otherwise apply it if any
+			-- 		if not require("sidekick").nes_jump_or_apply() then
+			-- 			return "<Tab>" -- fallback to normal tab
+			-- 		end
+			-- 	end,
+			-- 	expr = true,
+			-- 	desc = "Goto/Apply Next Edit Suggestion",
+			-- },
+
 			{
-				"<tab>",
-				function()
-					-- if there is a next edit, jump to it, otherwise apply it if any
-					if not require("sidekick").nes_jump_or_apply() then
-						return "<Tab>" -- fallback to normal tab
-					end
-				end,
-				expr = true,
-				desc = "Goto/Apply Next Edit Suggestion",
-			},
-      
-			{
-				"<c-.>",
+				"<M-.>",
 				function()
 					require("sidekick.cli").focus()
 				end,
@@ -36,18 +36,34 @@ return {
 			{
 				"<leader>aa",
 				function()
-					require("sidekick.cli").toggle({ focus = true })
-				end,
-				desc = "Sidekick Toggle CLI",
-				mode = { "n", "v" },
-			},
-			{
-				"<leader>ac",
-				function()
 					require("sidekick.cli").toggle({ name = "claude", focus = true })
 				end,
 				desc = "Sidekick Claude Toggle",
 				mode = { "n", "v" },
+			},
+			{
+				"<leader>at",
+				function()
+					require("sidekick.cli").send({ msg = "{this}", name = "claude" })
+				end,
+				mode = { "x", "n" },
+				desc = "Send This",
+			},
+			{
+				"<leader>av",
+				function()
+					require("sidekick.cli").send({ msg = "{selection}" })
+				end,
+				mode = { "x" },
+				desc = "Send Visual Selection",
+			},
+			{
+				"<leader>ap",
+				function()
+					require("sidekick.cli").prompt()
+				end,
+				mode = { "n", "x" },
+				desc = "Sidekick Select Prompt",
 			},
 		},
 	},
