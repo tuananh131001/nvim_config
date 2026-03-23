@@ -1,7 +1,7 @@
 return {
 	{ "rafamadriz/friendly-snippets", lazy = true },
 	{
-		"echasnovski/mini.snippets",
+		"nvim-mini/mini.snippets",
 		version = "*",
 		event = "InsertEnter",
 		dependencies = { "rafamadriz/friendly-snippets" },

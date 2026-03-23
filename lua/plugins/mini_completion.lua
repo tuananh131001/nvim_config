@@ -1,6 +1,6 @@
 return {
 	{
-		"echasnovski/mini.completion",
+		"nvim-mini/mini.completion",
 		version = "*",
 		event = "InsertEnter",
 		config = function()

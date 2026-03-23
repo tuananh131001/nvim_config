@@ -1,6 +1,6 @@
 return {
 	-- {
-	-- 	"echasnovski/mini.visits",
+	-- 	"nvim-mini/mini.visits",
 	-- 	event = "VeryLazy",
 	-- 	config = function(_, opts)
 	-- 		require("mini.visits").setup(opts)
