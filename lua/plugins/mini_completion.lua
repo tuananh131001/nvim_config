@@ -1,14 +1,13 @@
 return {
 	{
-		"nvim-mini/mini.completion",
+		"echasnovski/mini.completion",
 		version = "*",
-		event = "VeryLazy",
+		event = "InsertEnter",
 		config = function()
-			-- LSP -- Completion and Snippets
-			vim.cmd([[au FileType snacks_picker_input lua vim.b.minicompletion_disable = true]]) -- fix snacks issue
+			vim.cmd([[au FileType snacks_picker_input lua vim.b.minicompletion_disable = true]])
 			require("mini.completion").setup({
 				lsp_completion = {
-					source_func = "omnifunc", -- Weird character appear when using default value
+					source_func = "omnifunc",
 				},
 			})
 		end,

@@ -10,6 +10,9 @@ return {
 					backend = "tmux",
 					enabled = true,
 				},
+        tools = {
+          claude = { cmd = { "claude", "--dangerously-skip-permissions" } },
+        }
 			},
 		},
 		keys = {
