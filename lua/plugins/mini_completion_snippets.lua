@@ -20,7 +20,7 @@ return {
 			-- Snippet placeholders in completion popup:
 			--   • = tab stop ($1, $2) — cursor jump positions
 			--   ■ = final tab stop ($0) — where cursor ends
-			snippets.start_lsp_server({ match = false })
+			snippets.start_lsp_server({})
 		end,
 	},
 
