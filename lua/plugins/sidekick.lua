@@ -10,9 +10,9 @@ return {
 					backend = "tmux",
 					enabled = true,
 				},
-        tools = {
-          claude = { cmd = { "claude", "--dangerously-skip-permissions" } },
-        }
+				tools = {
+					claude = { cmd = { "claude", "--dangerously-skip-permissions" } },
+				},
 			},
 		},
 		keys = {
@@ -43,6 +43,22 @@ return {
 				end,
 				desc = "Sidekick Claude Toggle",
 				mode = { "n", "v" },
+			},
+			{
+				"<leader>as",
+				function()
+					require("sidekick.cli").select()
+				end,
+				-- Or to select only installed tools:
+				-- require("sidekick.cli").select({ filter = { installed = true } })
+				desc = "Select CLI",
+			},
+			{
+				"<leader>ad",
+				function()
+					require("sidekick.cli").close()
+				end,
+				desc = "Detach a CLI Session",
 			},
 			{
 				"<leader>at",

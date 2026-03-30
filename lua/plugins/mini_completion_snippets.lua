@@ -15,6 +15,13 @@ return {
 						},
 					}),
 				},
+				expand = {
+					-- Disable placeholder jumping
+					insert = function(snippet)
+						-- Insert raw text without placeholders
+						vim.api.nvim_put({ snippet.body:gsub("%$%b{}", ""):gsub("%$%d+", "") }, "c", true, true)
+					end,
+				},
 			})
 			-- match = false: let mini.completion handle filtering/sorting
 			-- Snippet placeholders in completion popup:
