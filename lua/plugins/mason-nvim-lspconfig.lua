@@ -41,11 +41,17 @@ return {
 	-- 	end,
 	-- },
 	{
+		"mason-org/mason.nvim",
+		opts = {},
+	},
+
+	{
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
 				"copilot",
-        "tailwindcss"
+				"tailwindcss",
+        "emmet_language_server"
 			},
 		},
 		dependencies = {
@@ -62,6 +68,8 @@ return {
 		config = function()
 			local keymap = vim.keymap -- for conciseness
 			vim.lsp.set_log_level("error")
+
+      -- Typescript + JS LSP
 			vim.lsp.config("vtsls", {
 				settings = {
 					complete_function_calls = true,
@@ -105,9 +113,18 @@ return {
 					)
 				end,
 			})
+
+      -- PHP LSP
 			vim.lsp.config("intelephense", {
 				filetypes = { "php", "inc" },
 			})
+
+      -- emmet
+      vim.lsp.config("emmet_language_server", {
+        filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+      })
+
+      -- tailwindcss
 			vim.lsp.config("tailwindcss", {
 				filetypes = {
 					"html",
