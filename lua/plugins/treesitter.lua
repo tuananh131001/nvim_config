@@ -1,23 +1,28 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-
 	lazy = false,
 	branch = "main",
 	build = ":TSUpdate",
 }
 
 M.config = function()
+	local ts = require("nvim-treesitter")
+
 	local parsers = {
 		"bash",
 		-- 'c',
-		-- 'comment',
+		"comment",
 		"css",
 		"csv",
 		"diff",
 		"dockerfile",
+		"dot",
+		"diff",
 		"gitignore",
-		-- 'go',
+		"gitcommit",
+		"go",
 		"html",
+		"ini",
 		"javascript",
 		-- 'jsdoc',
 		"json",
@@ -25,12 +30,18 @@ M.config = function()
 		-- 'luadoc',
 		-- 'make',
 		"markdown",
+		"hcl",
+		"terraform",
+		"fish",
 		"markdown_inline",
 		-- 'nginx',
-		'php',
-		-- "python",
+		-- 'php',
+		"python",
 		"query",
 		"regex",
+		"pem",
+		"mermaid",
+		"ruby",
 		-- 'rust',
 		-- 'scss',
 		-- 'svelte',
@@ -38,36 +49,39 @@ M.config = function()
 		-- 'templ',
 		"toml",
 		"tsv",
-    "tsx",
+		"tsx",
 		"typescript",
-		"vim",
-		"vimdoc",
+		"zsh",
+		-- "vim",
+		-- "vimdoc",
 		-- 'xml',
 		"yaml",
+		"tmux",
 		-- 'zig',
 	}
 
-	require("nvim-treesitter").install(parsers)
+	if ts.install then
+		ts.install(parsers)
+	end
 
 	vim.api.nvim_create_autocmd("FileType", {
 		callback = function(args)
-			local buf, filetype = args.buf, args.match
+			local buf = args.buf
 
-			local language = vim.treesitter.language.get_lang(filetype)
+			local language = vim.treesitter.language.get_lang(args.match)
 			if not language then
 				return
 			end
 
-			-- check if parser exists and load it
-			if not vim.treesitter.language.add(language) then
+			if not pcall(vim.treesitter.language.add, language) then
 				return
 			end
 
-			-- enables syntax highlighting and other treesitter features
-			vim.treesitter.start(buf, language)
+			pcall(vim.treesitter.start, buf)
 
-			-- enables treesitter based indentation
-			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			pcall(function()
+				vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end)
 		end,
 	})
 end
