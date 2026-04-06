@@ -2,6 +2,10 @@ return {
   "sphamba/smear-cursor.nvim",
 
   opts = {
+    --- Disable smear 
+    stiffness = 0.5,
+    trailing_stiffness = 0.5,
+    matrix_pixel_threshold = 0.5,
     -- Smear cursor when switching buffers or windows.
     smear_between_buffers = true,
 
