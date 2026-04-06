@@ -47,9 +47,11 @@ return {
 			mason_tool_installer.setup({
 				ensure_installed = {
 					-- Formatters/Linters
+					"typescript-language-server",
 					"stylua",
 					"prettier",
 					"tailwindcss",
+          "vtsls"
 				},
 			})
 		end,

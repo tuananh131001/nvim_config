@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			{ "rafamadriz/friendly-snippets" },
 		},
+		event = { "InsertEnter", "CmdlineEnter" },
 		version = "*",
 		opts = {
 			keymap = { preset = "default" },
@@ -15,6 +16,10 @@ return {
 				default = { "lsp", "path", "snippets", "buffer" },
 				providers = {},
 			},
+      keymap = {
+        preset = "enter",
+        ["<C-y>"] = { "select_and_accept" },
+      }
 		},
 	},
 }
