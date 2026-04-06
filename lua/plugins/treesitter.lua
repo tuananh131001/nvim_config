@@ -38,6 +38,7 @@ M.config = function()
 		-- 'templ',
 		"toml",
 		"tsv",
+    "tsx",
 		"typescript",
 		"vim",
 		"vimdoc",
