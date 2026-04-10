@@ -82,7 +82,7 @@ return {
 		},
 		config = function()
 			local keymap = vim.keymap -- for conciseness
-			vim.lsp.set_log_level("error")
+			-- vim.lsp.set_log_level("error")
 
 			-- Typescript + JS LSP
 			vim.lsp.config("vtsls", {
