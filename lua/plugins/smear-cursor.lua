@@ -1,6 +1,6 @@
 return {
   "sphamba/smear-cursor.nvim",
-
+  event = "VeryLazy",
   opts = {
     --- Disable smear 
     stiffness = 0.5,
