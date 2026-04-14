@@ -50,7 +50,14 @@ return {
 					"stylua",
 					"prettier",
 					"tailwindcss",
-          "vtsls"
+					"vtsls",
+					"emmet-language-server",
+				},
+				run_on_start = false,
+				integrations = {
+					["mason-lspconfig"] = false,
+					["mason-null-ls"] = false,
+					["mason-nvim-dap"] = false,
 				},
 			})
 		end,
@@ -58,19 +65,6 @@ return {
 	{
 		"mason-org/mason.nvim",
 		opts = {},
-	},
-
-	{
-		"mason-org/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"emmet_language_server",
-			},
-		},
-
-		dependencies = {
-			"neovim/nvim-lspconfig",
-		},
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -82,6 +76,8 @@ return {
 		config = function()
 			local keymap = vim.keymap -- for conciseness
 			-- vim.lsp.set_log_level("error")
+			lsps = { "vtsls", "stylua", "tailwindcss", "emmet-language-server" }
+			vim.lsp.enable(lsps)
 
 			-- Typescript + JS LSP
 			vim.lsp.config("vtsls", {
@@ -134,19 +130,14 @@ return {
 			})
 
 			-- emmet
-			vim.lsp.config("emmet_language_server", {
-				filetypes = {
-					"css",
-					"eruby",
-					"html",
-					"javascript",
-					"javascriptreact",
-					"less",
-					"sass",
-					"scss",
-					"pug",
-					"typescriptreact",
-				},
+			vim.api.nvim_create_autocmd({ "FileType" }, {
+				pattern = "css,eruby,html,htmldjango,javascriptreact,less,pug,sass,scss,typescriptreact",
+				callback = function()
+					vim.lsp.start({
+						cmd = { "emmet-language-server", "--stdio" },
+						root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+					})
+				end,
 			})
 
 			-- tailwindcss
