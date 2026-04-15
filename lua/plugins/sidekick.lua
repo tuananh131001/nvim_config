@@ -8,10 +8,10 @@ return {
 			cli = {
 				mux = {
 					backend = "tmux",
-					enabled = true,
+					enabled = false,
 				},
 				tools = {
-					claude = { cmd = { "claude", "--dangerously-skip-permissions" } },
+					claude = { cmd = { "claude" } },
 				},
 			},
 		},

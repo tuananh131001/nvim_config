@@ -44,7 +44,7 @@ M.config = function()
 		"ruby",
 		-- 'rust',
 		-- 'scss',
-		-- 'svelte',
+		'svelte',
 		"sql",
 		-- 'templ',
 		"toml",

@@ -49,9 +49,10 @@ return {
 					-- Formatters/Linters
 					"stylua",
 					"prettier",
-					"tailwindcss",
+					"tailwindcss-language-server",
 					"vtsls",
 					"emmet-language-server",
+					"svelte-language-server",
 				},
 				run_on_start = false,
 				integrations = {
@@ -76,8 +77,7 @@ return {
 		config = function()
 			local keymap = vim.keymap -- for conciseness
 			-- vim.lsp.set_log_level("error")
-			lsps = { "vtsls", "stylua", "tailwindcss", "emmet-language-server" }
-			vim.lsp.enable(lsps)
+			lsps = { "vtsls", "stylua", "tailwindcss", "emmet-language-server", "svelte" }
 
 			-- Typescript + JS LSP
 			vim.lsp.config("vtsls", {
@@ -152,6 +152,10 @@ return {
 					"typescriptreact",
 				},
 			})
+
+			vim.lsp.config("svelte", {})
+
+			vim.lsp.enable(lsps)
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
