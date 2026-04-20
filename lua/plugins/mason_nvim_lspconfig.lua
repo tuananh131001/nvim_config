@@ -53,6 +53,7 @@ return {
 					"vtsls",
 					"emmet-language-server",
 					"svelte-language-server",
+          "css-lsp"
 				},
 				run_on_start = false,
 				integrations = {
@@ -77,7 +78,7 @@ return {
 		config = function()
 			local keymap = vim.keymap -- for conciseness
 			-- vim.lsp.set_log_level("error")
-			lsps = { "vtsls", "stylua", "tailwindcss", "emmet-language-server", "svelte" }
+			lsps = { "vtsls", "stylua", "tailwindcss", "emmet-language-server", "svelte", "css-lsp" }
 
 			-- Typescript + JS LSP
 			vim.lsp.config("vtsls", {
@@ -154,6 +155,8 @@ return {
 			})
 
 			vim.lsp.config("svelte", {})
+
+      vim.lsp.config("css-lsp", {})
 
 			vim.lsp.enable(lsps)
 

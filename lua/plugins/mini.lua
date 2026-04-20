@@ -3,7 +3,6 @@ return {
 		"nvim-mini/mini.nvim",
 		version = "*",
 		config = function()
-			require("mini.statusline").setup()
 			require("mini.diff").setup()
 			require("mini.pairs").setup()
 			require("mini.tabline").setup()
@@ -15,10 +14,7 @@ return {
 				},
 			})
 			require("mini.icons").setup()
-
 			require("mini.align").setup()
-
-      require("mini.indentscope").setup()
       require("mini.operators").setup()
 		end,
 	},
