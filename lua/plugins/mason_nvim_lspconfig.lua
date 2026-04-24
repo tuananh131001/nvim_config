@@ -42,27 +42,24 @@ return {
 	-- },
 	{
 		"WhoIsSethDaniel/mason-tool-installer",
-		config = function()
-			local mason_tool_installer = require("mason-tool-installer")
-			mason_tool_installer.setup({
-				ensure_installed = {
-					-- Formatters/Linters
-					"stylua",
-					"prettier",
-					"tailwindcss-language-server",
-					"vtsls",
-					"emmet-language-server",
-					"svelte-language-server",
-          "css-lsp"
-				},
-				run_on_start = false,
-				integrations = {
-					["mason-lspconfig"] = false,
-					["mason-null-ls"] = false,
-					["mason-nvim-dap"] = false,
-				},
-			})
-		end,
+		opts = {
+			ensure_installed = {
+				-- Formatters/Linters
+				"stylua",
+				"prettier",
+				"tailwindcss-language-server",
+				"vtsls",
+				"emmet-language-server",
+				"svelte-language-server",
+				"css-lsp",
+			},
+			run_on_start = false,
+			integrations = {
+				["mason-lspconfig"] = false,
+				["mason-null-ls"] = false,
+				["mason-nvim-dap"] = false,
+			},
+		},
 	},
 	{
 		"mason-org/mason.nvim",
