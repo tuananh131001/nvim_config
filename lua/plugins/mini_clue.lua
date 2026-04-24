@@ -40,7 +40,26 @@ return {
 				},
 
 				clues = {
-					-- Enhance this by adding descriptions for <Leader> mapping groups
+					-- Leader group descriptions
+					{ mode = "n", keys = "<Leader>a", desc = "+AI / Sidekick" },
+					{ mode = "n", keys = "<Leader>b", desc = "+Blame" },
+					{ mode = "n", keys = "<Leader>c", desc = "+Code / LSP" },
+					{ mode = "x", keys = "<Leader>c", desc = "+Code / LSP" },
+					{ mode = "n", keys = "<Leader>d", desc = "+Diagnostics / Diffview" },
+					{ mode = "n", keys = "<Leader>dv", desc = "+Diffview open" },
+					{ mode = "n", keys = "<Leader>f", desc = "+Find (files/buffers)" },
+					{ mode = "n", keys = "<Leader>g", desc = "+Git" },
+					{ mode = "x", keys = "<Leader>g", desc = "+Git" },
+					{ mode = "n", keys = "<Leader>i", desc = "+Inlay hints" },
+					{ mode = "n", keys = "<Leader>m", desc = "+Markview" },
+					{ mode = "n", keys = "<Leader>o", desc = "+Octo" },
+					{ mode = "n", keys = "<Leader>op", desc = "+Octo PR" },
+					{ mode = "n", keys = "<Leader>r", desc = "+Run tests / Rename" },
+					{ mode = "n", keys = "<Leader>s", desc = "+Search / Symbols / Split" },
+					{ mode = "n", keys = "<Leader>x", desc = "+Trouble / Diagnostics list" },
+					{ mode = "n", keys = "<Leader><Tab>", desc = "+Tab" },
+
+					-- Built-in groups
 					miniclue.gen_clues.builtin_completion(),
 					miniclue.gen_clues.g(),
 					miniclue.gen_clues.marks(),

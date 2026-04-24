@@ -1,0 +1,11 @@
+{
+  "name": "personal-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": ["typescriptreact", "javascriptreact", "html", "vue", "svelte", "astro"],
+        "path": "./tailwind.json"
+      }
+    ]
+  }
+}

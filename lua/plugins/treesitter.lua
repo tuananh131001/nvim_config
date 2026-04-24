@@ -46,7 +46,7 @@ M.config = function()
 		-- 'scss',
 		'svelte',
 		"sql",
-		-- 'templ',
+		'templ',
 		"toml",
 		"tsv",
 		"tsx",

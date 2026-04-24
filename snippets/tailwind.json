@@ -1,0 +1,27 @@
+{
+  "max-md px": {
+    "prefix": "mmp",
+    "body": "max-md:px-$1",
+    "description": "max-md:px-"
+  },
+  "max-md py": {
+    "prefix": "mmy",
+    "body": "max-md:py-$1",
+    "description": "max-md:py-"
+  },
+  "max-md prefix": {
+    "prefix": "mm",
+    "body": "max-md:$1",
+    "description": "max-md: variant"
+  },
+  "md prefix": {
+    "prefix": "md-",
+    "body": "md:$1",
+    "description": "md: variant"
+  },
+  "lg prefix": {
+    "prefix": "lg-",
+    "body": "lg:$1",
+    "description": "lg: variant"
+  }
+}
