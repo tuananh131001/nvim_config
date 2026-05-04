@@ -35,7 +35,7 @@ M.config = function()
 		"fish",
 		"markdown_inline",
 		-- 'nginx',
-		-- 'php',
+		'php',
 		"python",
 		"query",
 		"regex",
