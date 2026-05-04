@@ -1,6 +1,6 @@
 return {
 	{
-		"stevearc/oil.nvim",
+		"barrettruth/canola.nvim",
 		event = "VeryLazy",
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 		config = function(_, opts)
@@ -34,5 +34,5 @@ return {
 				},
 			})
 		end,
-	},
+	}
 }
