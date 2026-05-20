@@ -20,6 +20,7 @@ return {
 				typescript = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
 				ruby = { "rubocop" },
+        markdown = { "rustfmt" }
 			},
 		},
 	},
