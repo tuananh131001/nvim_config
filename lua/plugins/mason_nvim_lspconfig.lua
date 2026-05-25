@@ -40,7 +40,7 @@ return {
 				"emmet-language-server",
 				"svelte-language-server",
 				"css-lsp",
-        "gopls"
+				"gopls",
 			},
 			run_on_start = false,
 			integrations = {
@@ -84,30 +84,10 @@ return {
 				on_attach = function(_client, bufnr)
 					local map = require("user.keymap.util").map("Vtsls")
 
-					map(
-						{ "n" },
-						"<leader>cO",
-						action_table["source.organizeImports"],
-						{ buffer = bufnr, desc = "[O]rganize Imports" }
-					)
-					map(
-						{ "n" },
-						"<leader>cM",
-						action_table["source.addMissingImports.ts"],
-						{ buffer = bufnr, desc = "Add [M]issing Imports" }
-					)
-					map(
-						{ "n" },
-						"<leader>cD",
-						action_table["source.removeUnused.ts"],
-						{ buffer = bufnr, desc = "Remove Unused Imports" }
-					)
-					map(
-						{ "n" },
-						"<leader>F",
-						action_table["source.fixAll.ts"],
-						{ buffer = bufnr, desc = "[F]ix All Diagnostics" }
-					)
+					map({ "n" }, "<leader>cO", action_table["source.organizeImports"], { buffer = bufnr, desc = "[O]rganize Imports" })
+					map({ "n" }, "<leader>cM", action_table["source.addMissingImports.ts"], { buffer = bufnr, desc = "Add [M]issing Imports" })
+					map({ "n" }, "<leader>cD", action_table["source.removeUnused.ts"], { buffer = bufnr, desc = "Remove Unused Imports" })
+					map({ "n" }, "<leader>F", action_table["source.fixAll.ts"], { buffer = bufnr, desc = "[F]ix All Diagnostics" })
 				end,
 			})
 
@@ -142,9 +122,13 @@ return {
 
 			vim.lsp.config("svelte", {})
 
-      vim.lsp.config("css-lsp", {})
+			vim.lsp.config("css-lsp", {})
 
-      vim.lsp.config("stylua", {})
+			vim.lsp.config("stylua", {})
+
+			vim.lsp.config("gopls", {
+				cmd = { "gopls" },
+			})
 
 			vim.lsp.enable(lsps)
 
