@@ -10,7 +10,8 @@ M.config = function()
 
 	local parsers = {
 		"bash",
-		-- 'c',
+		'c',
+    'cpp',
 		"comment",
 		"css",
 		"csv",
