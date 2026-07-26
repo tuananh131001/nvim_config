@@ -14,7 +14,7 @@ return {
 				nerd_font_variant = "mono",
 			},
 			sources = {
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				default = { "lazydev", "buffer" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
