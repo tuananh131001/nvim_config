@@ -19,7 +19,7 @@
   "mini.indentscope": { "branch": "main", "commit": "d3f955f09b1a05d25d5a7740338fba2baaee41a3" },
   "mini.nvim": { "branch": "main", "commit": "1345d191bb3da9c7b0e977f4387c5761f9bff68d" },
   "mini.statusline": { "branch": "main", "commit": "b5547f44560dae3ccd81f914256fa6f705837022" },
-  "monokai-pro.nvim": { "branch": "master", "commit": "d85d44cb29c0dbd70cdd2ddb552f223d47dd8ab9" },
+  "monokai-pro.nvim": { "branch": "master", "commit": "563dce135ffa7ed9073d3f103a3d322a6ba4988b" },
   "neogit": { "branch": "master", "commit": "57c9f8ee784bcd07141bf7fa958b5c5bb1420de8" },
   "nvim-lspconfig": { "branch": "master", "commit": "d592c1e6ad9a0a01b3d5ed3f0345d68407167181" },
   "nvim-surround": { "branch": "main", "commit": "2e93e154de9ff326def6480a4358bfc149d5da2c" },
