@@ -1,5 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
+  commit = "78bebef150057eff7f26044bb177fbbf82ff047d~1",
 	lazy = false,
 	branch = "main",
 	build = ":TSUpdate",
