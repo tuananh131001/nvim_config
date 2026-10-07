@@ -1,6 +1,6 @@
 return {
 	{
-		"barrettruth/canola.nvim",
+		"https://forge.barrettruth.com/barrettruth/canola.nvim",
 		event = "VeryLazy",
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 		config = function(_, opts)
