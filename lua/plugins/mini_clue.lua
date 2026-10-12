@@ -51,7 +51,7 @@ return {
 					{ mode = "n", keys = "<Leader>g", desc = "+Git" },
 					{ mode = "x", keys = "<Leader>g", desc = "+Git" },
 					{ mode = "n", keys = "<Leader>i", desc = "+Inlay hints" },
-					{ mode = "n", keys = "<Leader>m", desc = "+Markview" },
+					{ mode = "n", keys = "<Leader>m", desc = "+Markdown" },
 					{ mode = "n", keys = "<Leader>o", desc = "+Octo" },
 					{ mode = "n", keys = "<Leader>op", desc = "+Octo PR" },
 					{ mode = "n", keys = "<Leader>r", desc = "+Run tests / Rename" },
