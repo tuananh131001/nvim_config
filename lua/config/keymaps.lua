@@ -13,3 +13,5 @@ map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git
 map({"n", "x" }, "<leader>gY", function()
   Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
+
+require("utils.multiplexer").setup()
