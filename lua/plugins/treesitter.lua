@@ -47,7 +47,7 @@ M.config = function()
 		"pem",
 		"mermaid",
 		"ruby",
-		-- 'rust',
+		'rust',
 		-- 'scss',
 		'svelte',
 		"sql",
